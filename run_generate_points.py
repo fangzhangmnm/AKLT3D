@@ -3,7 +3,7 @@ import itertools as it
 from numpy import sqrt
 
 bash_filename_template='aklt3d_X{bond_dim}_{batch_name}.sh'
-folder_template='data/aklt3d_X{bond_dim}_{batch_name}/a1_{a1:.7f}_a2_{a2:.7f}_a3_{a3:.7f}.pt'
+folder_template='data/aklt3d_X{bond_dim}_{batch_name}/a1_{a1:.7f}_a2_{a2:.7f}_a3_{a3:.7f}'
 bash_header_template='''#!/bin/bash
 device=${1:-cuda:0}
 '''
@@ -52,5 +52,5 @@ scan_params=generate_scan_line((sqrt(20/15),0,sqrt(20/1)),(sqrt(20/15),2*sqrt(20
 save_bash('scan_a2',scan_params)
 scan_params=generate_scan_line((sqrt(20/15),sqrt(20/6),0),(sqrt(20/15),sqrt(20/6),2*sqrt(20/1)),21)
 save_bash('scan_a3',scan_params)
-scan_params=generate_scan_grid((0,0,0),(2*sqrt(20/15),2*sqrt(20/6),2*sqrt(20/1)),21)
+scan_params=generate_scan_grid((0,0,0),(2*sqrt(20/15),2*sqrt(20/6),2*sqrt(20/1)),11)
 save_bash('scan_grid',scan_params)
