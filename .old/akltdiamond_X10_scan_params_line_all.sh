@@ -1,0 +1,26 @@
+#!/bin/bash
+device=${1:-cuda:0}
+
+python HOTRG_run.py --filename data/akltdiamond_X10_scan_params_line/a1_0.2247449_a2_2.4494897.pt --nLayers 30 --max_dim 10 --mcf_enabled --model AKLTDiamond --params "{'a1': 0.22474487139158894, 'a2': 2.449489742783178}" --device $device
+python HOTRG_run.py --filename data/akltdiamond_X10_scan_params_line/a1_0.4247449_a2_2.4494897.pt --nLayers 30 --max_dim 10 --mcf_enabled --model AKLTDiamond --params "{'a1': 0.4247448713915889, 'a2': 2.449489742783178}" --device $device
+python HOTRG_run.py --filename data/akltdiamond_X10_scan_params_line/a1_0.6247449_a2_2.4494897.pt --nLayers 30 --max_dim 10 --mcf_enabled --model AKLTDiamond --params "{'a1': 0.624744871391589, 'a2': 2.449489742783178}" --device $device
+python HOTRG_run.py --filename data/akltdiamond_X10_scan_params_line/a1_0.8247449_a2_2.4494897.pt --nLayers 30 --max_dim 10 --mcf_enabled --model AKLTDiamond --params "{'a1': 0.824744871391589, 'a2': 2.449489742783178}" --device $device
+python HOTRG_run.py --filename data/akltdiamond_X10_scan_params_line/a1_1.0247449_a2_2.4494897.pt --nLayers 30 --max_dim 10 --mcf_enabled --model AKLTDiamond --params "{'a1': 1.024744871391589, 'a2': 2.449489742783178}" --device $device
+python HOTRG_run.py --filename data/akltdiamond_X10_scan_params_line/a1_1.2247449_a2_2.4494897.pt --nLayers 30 --max_dim 10 --mcf_enabled --model AKLTDiamond --params "{'a1': 1.224744871391589, 'a2': 2.449489742783178}" --device $device
+python HOTRG_run.py --filename data/akltdiamond_X10_scan_params_line/a1_1.4247449_a2_2.4494897.pt --nLayers 30 --max_dim 10 --mcf_enabled --model AKLTDiamond --params "{'a1': 1.4247448713915891, 'a2': 2.449489742783178}" --device $device
+python HOTRG_run.py --filename data/akltdiamond_X10_scan_params_line/a1_1.6247449_a2_2.4494897.pt --nLayers 30 --max_dim 10 --mcf_enabled --model AKLTDiamond --params "{'a1': 1.624744871391589, 'a2': 2.449489742783178}" --device $device
+python HOTRG_run.py --filename data/akltdiamond_X10_scan_params_line/a1_1.8247449_a2_2.4494897.pt --nLayers 30 --max_dim 10 --mcf_enabled --model AKLTDiamond --params "{'a1': 1.824744871391589, 'a2': 2.449489742783178}" --device $device
+python HOTRG_run.py --filename data/akltdiamond_X10_scan_params_line/a1_2.0247449_a2_2.4494897.pt --nLayers 30 --max_dim 10 --mcf_enabled --model AKLTDiamond --params "{'a1': 2.024744871391589, 'a2': 2.449489742783178}" --device $device
+python HOTRG_run.py --filename data/akltdiamond_X10_scan_params_line/a1_2.2247449_a2_2.4494897.pt --nLayers 30 --max_dim 10 --mcf_enabled --model AKLTDiamond --params "{'a1': 2.224744871391589, 'a2': 2.449489742783178}" --device $device
+
+python HOTRG_run.py --filename data/akltdiamond_X10_scan_params_line/a1_1.1247449_a2_2.4494897.pt --nLayers 30 --max_dim 10 --mcf_enabled --model AKLTDiamond --params "{'a1': 1.1247448713915889, 'a2': 2.449489742783178}" --device $device
+python HOTRG_run.py --filename data/akltdiamond_X10_scan_params_line/a1_1.1447449_a2_2.4494897.pt --nLayers 30 --max_dim 10 --mcf_enabled --model AKLTDiamond --params "{'a1': 1.1447448713915889, 'a2': 2.449489742783178}" --device $device
+python HOTRG_run.py --filename data/akltdiamond_X10_scan_params_line/a1_1.1647449_a2_2.4494897.pt --nLayers 30 --max_dim 10 --mcf_enabled --model AKLTDiamond --params "{'a1': 1.1647448713915889, 'a2': 2.449489742783178}" --device $device
+python HOTRG_run.py --filename data/akltdiamond_X10_scan_params_line/a1_1.1847449_a2_2.4494897.pt --nLayers 30 --max_dim 10 --mcf_enabled --model AKLTDiamond --params "{'a1': 1.184744871391589, 'a2': 2.449489742783178}" --device $device
+python HOTRG_run.py --filename data/akltdiamond_X10_scan_params_line/a1_1.2047449_a2_2.4494897.pt --nLayers 30 --max_dim 10 --mcf_enabled --model AKLTDiamond --params "{'a1': 1.204744871391589, 'a2': 2.449489742783178}" --device $device
+python HOTRG_run.py --filename data/akltdiamond_X10_scan_params_line/a1_1.2247449_a2_2.4494897.pt --nLayers 30 --max_dim 10 --mcf_enabled --model AKLTDiamond --params "{'a1': 1.224744871391589, 'a2': 2.449489742783178}" --device $device
+python HOTRG_run.py --filename data/akltdiamond_X10_scan_params_line/a1_1.2447449_a2_2.4494897.pt --nLayers 30 --max_dim 10 --mcf_enabled --model AKLTDiamond --params "{'a1': 1.244744871391589, 'a2': 2.449489742783178}" --device $device
+python HOTRG_run.py --filename data/akltdiamond_X10_scan_params_line/a1_1.2647449_a2_2.4494897.pt --nLayers 30 --max_dim 10 --mcf_enabled --model AKLTDiamond --params "{'a1': 1.264744871391589, 'a2': 2.449489742783178}" --device $device
+python HOTRG_run.py --filename data/akltdiamond_X10_scan_params_line/a1_1.2847449_a2_2.4494897.pt --nLayers 30 --max_dim 10 --mcf_enabled --model AKLTDiamond --params "{'a1': 1.284744871391589, 'a2': 2.449489742783178}" --device $device
+python HOTRG_run.py --filename data/akltdiamond_X10_scan_params_line/a1_1.3047449_a2_2.4494897.pt --nLayers 30 --max_dim 10 --mcf_enabled --model AKLTDiamond --params "{'a1': 1.304744871391589, 'a2': 2.449489742783178}" --device $device
+python HOTRG_run.py --filename data/akltdiamond_X10_scan_params_line/a1_1.3247449_a2_2.4494897.pt --nLayers 30 --max_dim 10 --mcf_enabled --model AKLTDiamond --params "{'a1': 1.324744871391589, 'a2': 2.449489742783178}" --device $device
