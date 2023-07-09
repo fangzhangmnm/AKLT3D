@@ -78,7 +78,8 @@ def get_transfer_matrix_operator(T,n:'tuple[int]'):
 
 def get_scdims(T,n=2,k=10,tensor_block_height=1):
     if isinstance(n,list): n=tuple(n)
-    if isinstance(n,int): n=(n,) if len(T.shape)==4 else (n,n)
+    if isinstance(n,int): n=(n,)
+    if len(n)==1: n=n if len(T.shape)==4 else (n[0],n[0])
     M=get_transfer_matrix_operator(T,n)
     s,u=eigs(M,k=min(k,M.shape[0]-2))
     u,s=torch.tensor(u),torch.tensor(s)
