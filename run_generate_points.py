@@ -7,7 +7,7 @@ folder_template='data/{model_name}_X{bond_dim}_{batch_name}/{params_string}'
 bash_header_template='''#!/bin/bash
 device=${1:-cuda:0}
 '''
-command_template='''python run_HOTRG.py --filename {folder_name}/tensor.pt --nLayers {nLayers} --max_dim {bond_dim} --mcf_enabled --model {model_name} --params "{params}" --device $device
+command_template='''python run_HOTRG.py --filename {folder_name}/tensor.pt --nLayers {nLayers} --max_dim {bond_dim} {HOTRG_options} --model {model_name} --params "{params}" --device $device
 python run_calculate_observables.py --input_filename {folder_name}/tensor.pt --output_filename {folder_name}/observables.csv --observables magnetizationX magnetizationY magnetizationZ --device $device
 python run_calculate_scdims.py --input_filename {folder_name}/tensor.pt --output_filename {folder_name}/scdims.csv --n 1 --device $device
 '''
@@ -47,7 +47,7 @@ def save_bash(batch_name,scan_params,append=False,batch_name1=None):
         f.write(bash_header_template)
     for params in scan_params:
         folder_name=folder_template.format(bond_dim=bond_dim,batch_name=batch_name,model_name=model_name,params_string=generate_params_string(params))
-        command=command_template.format(folder_name=folder_name,nLayers=nLayers,bond_dim=bond_dim,model_name=model_name,params=str(params))
+        command=command_template.format(folder_name=folder_name,nLayers=nLayers,bond_dim=bond_dim,model_name=model_name,params=str(params),HOTRG_options=HOTRG_options)
         f.write(command+'\n')
     f.close()
     print('wrote',bash_filename)
@@ -58,6 +58,7 @@ def save_bash(batch_name,scan_params,append=False,batch_name1=None):
 
 model_name='AKLT3D'
 nLayers,bond_dim=60,10
+HOTRG_options='--mcf_enabled'
 param_names=['a1','a2','a3']
 a1,a2,a3=sqrt(20/15),sqrt(20/6),sqrt(20/1)
 
@@ -82,6 +83,7 @@ save_bash('scan_00_log',scan_params)
 
 model_name='AKLTDiamond'
 nLayers,bond_dim=60,10
+HOTRG_options='--mcf_enabled'
 param_names=['a1','a2']
 a1,a2=sqrt(6/4),sqrt(6/1)
 
@@ -96,6 +98,7 @@ save_bash('scan_a2',scan_params)
 
 model_name='AKLT2D'
 nLayers,bond_dim=60,24
+HOTRG_options='--mcf_enabled --gilt_enabled'
 param_names=['a1','a2']
 a1,a2=sqrt(6/4),sqrt(6/1)
 
@@ -110,6 +113,7 @@ save_bash('scan_a2',scan_params)
 
 model_name='AKLTHoneycomb'
 nLayers,bond_dim=60,24
+HOTRG_options='--mcf_enabled --gilt_enabled'
 param_names=['a32']
 a32=np.sqrt(3/1)
 scan_params=generate_scan_line((0,),(2*a32,),21)
