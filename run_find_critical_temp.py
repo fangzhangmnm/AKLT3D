@@ -9,6 +9,7 @@ parser.add_argument('--log_filename', type=str, default=None) # data/hotrg_gilt_
 parser.add_argument('--nLayers', type=int, required=True) # 60
 parser.add_argument('--max_dim', type=int, required=True) # 24
 parser.add_argument('--model', type=str, required=True) # 'Ising2D'
+parser.add_argument('--find_critical_method', type=str, default='tensor') # 'tensor' or 'observable'
 parser.add_argument('--params_min', type=str, required=True)
 parser.add_argument('--params_max', type=str, required=True)
 parser.add_argument('--params_ref', type=str, default=None)
@@ -26,6 +27,7 @@ parser.add_argument('--mcf_max_iter', type=int, default=200)
 parser.add_argument('--hotrg_sanity_check', action='store_true')
 parser.add_argument('--version', type=int, default=1)
 parser.add_argument('--device', type=str, default='cuda:0')
+parser.add_argument('--override', action='store_true')
 
 args = parser.parse_args()
 options=vars(args)
@@ -36,9 +38,13 @@ args = parser.parse_args()
 options=vars(args)
 
 import os
+if not options['override'] and os.path.exists(options['filename']):
+    print('file already exists, exiting')
+    exit()
 os.makedirs(os.path.dirname(options['filename']),exist_ok=True)
 logfile=open(options['log_filename'],'w') if options['log_filename'] is not None else None
 print('logging to',options['log_filename'])
+
 
 def print_and_log(*args):
     print(*args)
@@ -115,8 +121,14 @@ while True:
     #dist_max=contract('ijkl,ijkl->',T_max,T_new).abs()
     # dist_min=(obs_min-obs_new).abs()
     # dist_max=(obs_max-obs_new).abs()
-    dist_min=(dNorm_min-dNorm_new).norm()
-    dist_max=(dNorm_max-dNorm_new).norm()
+    if options['find_critical_method']=='tensor':
+        dist_min=(dNorm_min-dNorm_new).norm()
+        dist_max=(dNorm_max-dNorm_new).norm()
+    elif options['find_critical_method']=='observable':
+        dist_min=(obs_min-obs_new).abs()
+        dist_max=(obs_max-obs_new).abs()
+    else:
+        assert False
     print_and_log('params_min=',str(params_min),'logZ_min=',logZ_min.item(),'obs_min=',obs_min.item())
     print_and_log('params_new=',str(params_new),'logZ_new=',logZ_new.item(),'obs_new=',obs_new.item())
     print_and_log('params_max=',str(params_max),'logZ_max=',logZ_max.item(),'obs_max=',obs_max.item())

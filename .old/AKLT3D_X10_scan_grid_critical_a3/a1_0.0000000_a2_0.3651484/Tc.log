@@ -1,0 +1,316 @@
+Start running find_critical_temp.py with options:{'filename': 'data/AKLT3D_X10_scan_grid_critical_a3/a1_0.0000000_a2_0.3651484/Tc.json', 'log_filename': 'data/AKLT3D_X10_scan_grid_critical_a3/a1_0.0000000_a2_0.3651484/Tc.log', 'nLayers': 60, 'max_dim': 10, 'model': 'AKLT3D', 'params_min': "{'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 2.683281572999748}", 'params_max': "{'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.577708763999664}", 'params_ref': None, 'observable_name': 'magnetizationZ', 'tol': 0.0, 'gilt_enabled': False, 'gilt_eps': 8e-07, 'gilt_nIter': 1, 'mcf_enabled': True, 'mcf_eps': 1e-16, 'mcf_max_iter': 200, 'hotrg_sanity_check': False, 'version': 1, 'device': 'cuda:1'}
+loading library...
+evaluating model at params_min={'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 2.683281572999748}
+params_min= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 2.683281572999748} logZ_min= nan obs_min= 1.1823736623084636e-36
+evaluating model at params_max={'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.577708763999664}
+params_max= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.577708763999664} logZ_max= 2.543200673920691 obs_max= 8.995940889265928
+searching for critical temperature using bisection method
+evaluating model at params_new={'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.130495168499706}
+params_min= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 2.683281572999748} logZ_min= nan obs_min= 1.1823736623084636e-36
+params_new= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.130495168499706} logZ_new= 2.2454621377731367 obs_new= 8.99235490800339
+params_max= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.577708763999664} logZ_max= 2.543200673920691 obs_max= 8.995940889265928
+dist_min= tensor(123.6843) dist_max= tensor(223.1151)
+params_min,params_max=params_new,params_max
+evaluating model at params_new={'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.3541019662496847}
+params_min= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.130495168499706} logZ_min= 2.2454621377731367 obs_min= 8.99235490800339
+params_new= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.3541019662496847} logZ_new= 2.404831285129378 obs_new= 8.994685406974233
+params_max= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.577708763999664} logZ_max= 2.543200673920691 obs_max= 8.995940889265928
+dist_min= tensor(48.0792) dist_max= tensor(175.4463)
+params_min,params_max=params_new,params_max
+evaluating model at params_new={'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.4659053651246743}
+params_min= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.3541019662496847} logZ_min= 2.404831285129378 obs_min= 8.994685406974233
+params_new= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.4659053651246743} logZ_new= 2.4760749687773136 obs_new= 8.995355242588833
+params_max= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.577708763999664} logZ_max= 2.543200673920691 obs_max= 8.995940889265928
+dist_min= tensor(61.7159) dist_max= tensor(113.7716)
+params_min,params_max=params_new,params_max
+evaluating model at params_new={'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.521807064562169}
+params_min= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.4659053651246743} logZ_min= 2.4760749687773136 obs_min= 8.995355242588833
+params_new= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.521807064562169} logZ_new= 2.510096531440785 obs_new= 8.995659843999146
+params_max= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.577708763999664} logZ_max= 2.543200673920691 obs_max= 8.995940889265928
+dist_min= tensor(47.8948) dist_max= tensor(65.8804)
+params_min,params_max=params_new,params_max
+evaluating model at params_new={'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5497579142809164}
+params_min= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.521807064562169} logZ_min= 2.510096531440785 obs_min= 8.995659843999146
+params_new= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5497579142809164} logZ_new= 2.526747523770228 obs_new= 8.995802924921504
+params_max= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.577708763999664} logZ_max= 2.543200673920691 obs_max= 8.995940889265928
+dist_min= tensor(30.6600) dist_max= tensor(35.2913)
+params_min,params_max=params_new,params_max
+evaluating model at params_new={'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.56373333914029}
+params_min= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5497579142809164} logZ_min= 2.526747523770228 obs_min= 8.995802924921504
+params_new= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.56373333914029} logZ_new= 2.534997716804526 obs_new= 8.995873126535063
+params_max= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.577708763999664} logZ_max= 2.543200673920691 obs_max= 8.995940889265928
+dist_min= tensor(17.3020) dist_max= tensor(18.0546)
+params_min,params_max=params_new,params_max
+evaluating model at params_new={'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.570721051569977}
+params_min= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.56373333914029} logZ_min= 2.534997716804526 obs_min= 8.995873126535063
+params_new= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.570721051569977} logZ_new= 2.539109692621305 obs_new= 8.995905928323891
+params_max= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.577708763999664} logZ_max= 2.543200673920691 obs_max= 8.995940889265928
+dist_min= tensor(10.2075) dist_max= tensor(8.1044)
+params_min,params_max=params_min,params_new
+evaluating model at params_new={'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5672271953551338}
+params_min= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.56373333914029} logZ_min= 2.534997716804526 obs_min= 8.995873126535063
+params_new= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5672271953551338} logZ_new= 2.5370616159640593 obs_new= 8.99589008359757
+params_max= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.570721051569977} logZ_max= 2.539109692621305 obs_max= 8.995905928323891
+dist_min= tensor(4.5359) dist_max= tensor(6.1338)
+params_min,params_max=params_new,params_max
+evaluating model at params_new={'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5689741234625556}
+params_min= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5672271953551338} logZ_min= 2.5370616159640593 obs_min= 8.99589008359757
+params_new= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5689741234625556} logZ_new= 2.538081485183404 obs_new= 8.995897780600199
+params_max= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.570721051569977} logZ_max= 2.539109692621305 obs_max= 8.995905928323891
+dist_min= tensor(2.7918) dist_max= tensor(3.8164)
+params_min,params_max=params_new,params_max
+evaluating model at params_new={'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.569847587516266}
+params_min= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5689741234625556} logZ_min= 2.538081485183404 obs_min= 8.995897780600199
+params_new= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.569847587516266} logZ_new= 2.5385961693481254 obs_new= 8.995902427303108
+params_max= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.570721051569977} logZ_max= 2.539109692621305 obs_max= 8.995905928323891
+dist_min= tensor(2.1201) dist_max= tensor(2.1470)
+params_min,params_max=params_new,params_max
+evaluating model at params_new={'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5702843195431218}
+params_min= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.569847587516266} logZ_min= 2.5385961693481254 obs_min= 8.995902427303108
+params_new= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5702843195431218} logZ_new= 2.538850958819029 obs_new= 8.995904660542045
+params_max= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.570721051569977} logZ_max= 2.539109692621305 obs_max= 8.995905928323891
+dist_min= tensor(1.3376) dist_max= tensor(0.9050)
+params_min,params_max=params_min,params_new
+evaluating model at params_new={'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.570065953529694}
+params_min= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.569847587516266} logZ_min= 2.5385961693481254 obs_min= 8.995902427303108
+params_new= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.570065953529694} logZ_new= 2.5387241777392253 obs_new= 8.995902794968305
+params_max= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5702843195431218} logZ_max= 2.538850958819029 obs_max= 8.995904660542045
+dist_min= tensor(0.5378) dist_max= tensor(1.5538)
+params_min,params_max=params_new,params_max
+evaluating model at params_new={'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.570175136536408}
+params_min= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.570065953529694} logZ_min= 2.5387241777392253 obs_min= 8.995902794968305
+params_new= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.570175136536408} logZ_new= 2.5387860618888958 obs_new= 8.99590384689217
+params_max= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5702843195431218} logZ_max= 2.538850958819029 obs_max= 8.995904660542045
+dist_min= tensor(1.4321) dist_max= tensor(0.4066)
+params_min,params_max=params_min,params_new
+evaluating model at params_new={'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.570120545033051}
+params_min= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.570065953529694} logZ_min= 2.5387241777392253 obs_min= 8.995902794968305
+params_new= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.570120545033051} logZ_new= 2.5387525392708348 obs_new= 8.995903799275895
+params_max= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.570175136536408} logZ_max= 2.5387860618888958 obs_max= 8.99590384689217
+dist_min= tensor(0.7054) dist_max= tensor(1.5191)
+params_min,params_max=params_new,params_max
+evaluating model at params_new={'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701478407847294}
+params_min= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.570120545033051} logZ_min= 2.5387525392708348 obs_min= 8.995903799275895
+params_new= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701478407847294} logZ_new= 2.53877134208424 obs_new= 8.99590365105262
+params_max= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.570175136536408} logZ_max= 2.5387860618888958 obs_max= 8.99590384689217
+dist_min= tensor(0.3849) dist_max= tensor(1.3891)
+params_min,params_max=params_new,params_max
+evaluating model at params_new={'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701614886605686}
+params_min= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701478407847294} logZ_min= 2.53877134208424 obs_min= 8.99590365105262
+params_new= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701614886605686} logZ_new= 2.538775979445716 obs_new= 8.995905187437595
+params_max= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.570175136536408} logZ_max= 2.5387860618888958 obs_max= 8.99590384689217
+dist_min= tensor(2.8571) dist_max= tensor(3.6513)
+params_min,params_max=params_new,params_max
+evaluating model at params_new={'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.570168312598488}
+params_min= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701614886605686} logZ_min= 2.538775979445716 obs_min= 8.995905187437595
+params_new= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.570168312598488} logZ_new= 2.5387877906564893 obs_new= 8.995904160798569
+params_max= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.570175136536408} logZ_max= 2.5387860618888958 obs_max= 8.99590384689217
+dist_min= tensor(4.1075) dist_max= tensor(1.6182)
+params_min,params_max=params_min,params_new
+evaluating model at params_new={'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701649006295284}
+params_min= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701614886605686} logZ_min= 2.538775979445716 obs_min= 8.995905187437595
+params_new= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701649006295284} logZ_new= 2.538784060254108 obs_new= 8.995905848622806
+params_max= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.570168312598488} logZ_max= 2.5387877906564893 obs_max= 8.995904160798569
+dist_min= tensor(2.7731) dist_max= tensor(1.9021)
+params_min,params_max=params_min,params_new
+evaluating model at params_new={'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701631946450485}
+params_min= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701614886605686} logZ_min= 2.538775979445716 obs_min= 8.995905187437595
+params_new= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701631946450485} logZ_new= 2.5387837660210715 obs_new= 8.995905227507993
+params_max= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701649006295284} logZ_max= 2.538784060254108 obs_max= 8.995905848622806
+dist_min= tensor(3.4440) dist_max= tensor(1.2210)
+params_min,params_max=params_min,params_new
+evaluating model at params_new={'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701623416528085}
+params_min= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701614886605686} logZ_min= 2.538775979445716 obs_min= 8.995905187437595
+params_new= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701623416528085} logZ_new= 2.5387831683906157 obs_new= 8.995902847002233
+params_max= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701631946450485} logZ_max= 2.5387837660210715 obs_max= 8.995905227507993
+dist_min= tensor(6.1879) dist_max= tensor(5.2804)
+params_min,params_max=params_min,params_new
+evaluating model at params_new={'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.570161915156689}
+params_min= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701614886605686} logZ_min= 2.538775979445716 obs_min= 8.995905187437595
+params_new= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.570161915156689} logZ_new= 2.538782217058467 obs_new= 8.995904675867392
+params_max= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701623416528085} logZ_max= 2.5387831683906157 obs_max= 8.995902847002233
+dist_min= tensor(3.3611) dist_max= tensor(3.4873)
+params_min,params_max=params_new,params_max
+evaluating model at params_new={'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.570162128404749}
+params_min= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.570161915156689} logZ_min= 2.538782217058467 obs_min= 8.995904675867392
+params_new= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.570162128404749} logZ_new= 2.5387837776469384 obs_new= 8.995902759187265
+params_max= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701623416528085} logZ_max= 2.5387831683906157 obs_max= 8.995902847002233
+dist_min= tensor(2.2475) dist_max= tensor(2.3618)
+params_min,params_max=params_new,params_max
+evaluating model at params_new={'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701622350287785}
+params_min= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.570162128404749} logZ_min= 2.5387837776469384 obs_min= 8.995902759187265
+params_new= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701622350287785} logZ_new= 2.538781966434553 obs_new= 8.995902983356244
+params_max= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701623416528085} logZ_max= 2.5387831683906157 obs_max= 8.995902847002233
+dist_min= tensor(2.8967) dist_max= tensor(0.8218)
+params_min,params_max=params_min,params_new
+evaluating model at params_new={'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701621817167637}
+params_min= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.570162128404749} logZ_min= 2.5387837776469384 obs_min= 8.995902759187265
+params_new= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701621817167637} logZ_new= 2.5387816461830677 obs_new= 8.995905176274476
+params_max= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701622350287785} logZ_max= 2.538781966434553 obs_max= 8.995902983356244
+dist_min= tensor(1.6574) dist_max= tensor(4.1179)
+params_min,params_max=params_new,params_max
+evaluating model at params_new={'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701622083727713}
+params_min= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701621817167637} logZ_min= 2.5387816461830677 obs_min= 8.995905176274476
+params_new= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701622083727713} logZ_new= 2.5387833130215824 obs_new= 8.995902812819107
+params_max= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701622350287785} logZ_max= 2.538781966434553 obs_max= 8.995902983356244
+dist_min= tensor(1.6937) dist_max= tensor(2.9533)
+params_min,params_max=params_new,params_max
+evaluating model at params_new={'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.570162221700775}
+params_min= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701622083727713} logZ_min= 2.5387833130215824 obs_min= 8.995902812819107
+params_new= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.570162221700775} logZ_new= 2.5387846232055096 obs_new= 8.99590420693337
+params_max= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701622350287785} logZ_max= 2.538781966434553 obs_max= 8.995902983356244
+dist_min= tensor(1.1254) dist_max= tensor(3.4875)
+params_min,params_max=params_new,params_max
+evaluating model at params_new={'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701622283647767}
+params_min= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.570162221700775} logZ_min= 2.5387846232055096 obs_min= 8.99590420693337
+params_new= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701622283647767} logZ_new= 2.538780444084727 obs_new= 8.995904401512021
+params_max= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701622350287785} logZ_max= 2.538781966434553 obs_max= 8.995902983356244
+dist_min= tensor(1.3875) dist_max= tensor(3.9159)
+params_min,params_max=params_new,params_max
+evaluating model at params_new={'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701622316967776}
+params_min= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701622283647767} logZ_min= 2.538780444084727 obs_min= 8.995904401512021
+params_new= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701622316967776} logZ_new= 2.538782608339257 obs_new= 8.995904013271112
+params_max= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701622350287785} logZ_max= 2.538781966434553 obs_max= 8.995902983356244
+dist_min= tensor(1.8916) dist_max= tensor(3.0524)
+params_min,params_max=params_new,params_max
+evaluating model at params_new={'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.570162233362778}
+params_min= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701622316967776} logZ_min= 2.538782608339257 obs_min= 8.995904013271112
+params_new= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.570162233362778} logZ_new= 2.5387803313286486 obs_new= 8.995903240363804
+params_max= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701622350287785} logZ_max= 2.538781966434553 obs_max= 8.995902983356244
+dist_min= tensor(1.4534) dist_max= tensor(4.2868)
+params_min,params_max=params_new,params_max
+evaluating model at params_new={'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.570162234195778}
+params_min= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.570162233362778} logZ_min= 2.5387803313286486 obs_min= 8.995903240363804
+params_new= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.570162234195778} logZ_new= 2.5387824808816095 obs_new= 8.995904812999191
+params_max= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701622350287785} logZ_max= 2.538781966434553 obs_max= 8.995902983356244
+dist_min= tensor(2.3195) dist_max= tensor(5.6038)
+params_min,params_max=params_new,params_max
+evaluating model at params_new={'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701622346122783}
+params_min= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.570162234195778} logZ_min= 2.5387824808816095 obs_min= 8.995904812999191
+params_new= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701622346122783} logZ_new= 2.53878184269567 obs_new= 8.995903138134748
+params_max= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701622350287785} logZ_max= 2.538781966434553 obs_max= 8.995902983356244
+dist_min= tensor(2.5637) dist_max= tensor(3.2556)
+params_min,params_max=params_new,params_max
+evaluating model at params_new={'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.570162234820528}
+params_min= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701622346122783} logZ_min= 2.53878184269567 obs_min= 8.995903138134748
+params_new= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.570162234820528} logZ_new= 2.5387823771246207 obs_new= 8.99590514424746
+params_max= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701622350287785} logZ_max= 2.538781966434553 obs_max= 8.995902983356244
+dist_min= tensor(1.3337) dist_max= tensor(4.5190)
+params_min,params_max=params_new,params_max
+evaluating model at params_new={'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701622349246533}
+params_min= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.570162234820528} logZ_min= 2.5387823771246207 obs_min= 8.99590514424746
+params_new= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701622349246533} logZ_new= 2.538782207331203 obs_new= 8.99590286008072
+params_max= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701622350287785} logZ_max= 2.538781966434553 obs_max= 8.995902983356244
+dist_min= tensor(2.4074) dist_max= tensor(3.0982)
+params_min,params_max=params_new,params_max
+evaluating model at params_new={'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.570162234976716}
+params_min= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701622349246533} logZ_min= 2.538782207331203 obs_min= 8.99590286008072
+params_new= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.570162234976716} logZ_new= 2.538780200364507 obs_new= 8.995904535375098
+params_max= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701622350287785} logZ_max= 2.538781966434553 obs_max= 8.995902983356244
+dist_min= tensor(2.3981) dist_max= tensor(3.6038)
+params_min,params_max=params_new,params_max
+evaluating model at params_new={'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701622350027473}
+params_min= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.570162234976716} logZ_min= 2.538780200364507 obs_min= 8.995904535375098
+params_new= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701622350027473} logZ_new= 2.5387740611764706 obs_new= 8.995905207119558
+params_max= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701622350287785} logZ_max= 2.538781966434553 obs_max= 8.995902983356244
+dist_min= tensor(2.4911) dist_max= tensor(5.6512)
+params_min,params_max=params_new,params_max
+evaluating model at params_new={'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.570162235015763}
+params_min= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701622350027473} logZ_min= 2.5387740611764706 obs_min= 8.995905207119558
+params_new= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.570162235015763} logZ_new= 2.538781886150877 obs_new= 8.99590353566379
+params_max= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701622350287785} logZ_max= 2.538781966434553 obs_max= 8.995902983356244
+dist_min= tensor(4.2786) dist_max= tensor(1.6804)
+params_min,params_max=params_min,params_new
+evaluating model at params_new={'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701622350092554}
+params_min= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701622350027473} logZ_min= 2.5387740611764706 obs_min= 8.995905207119558
+params_new= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701622350092554} logZ_new= 2.538780005208041 obs_new= 8.995904155340858
+params_max= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.570162235015763} logZ_max= 2.538781886150877 obs_max= 8.99590353566379
+dist_min= tensor(2.7884) dist_max= tensor(1.6945)
+params_min,params_max=params_min,params_new
+evaluating model at params_new={'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.570162235006001}
+params_min= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701622350027473} logZ_min= 2.5387740611764706 obs_min= 8.995905207119558
+params_new= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.570162235006001} logZ_new= 2.5387841487803313 obs_new= 8.995904318450718
+params_max= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701622350092554} logZ_max= 2.538780005208041 obs_max= 8.995904155340858
+dist_min= tensor(2.7095) dist_max= tensor(1.1871)
+params_min,params_max=params_min,params_new
+evaluating model at params_new={'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.570162235004374}
+params_min= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701622350027473} logZ_min= 2.5387740611764706 obs_min= 8.995905207119558
+params_new= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.570162235004374} logZ_new= 2.538780143365974 obs_new= 8.995903541975963
+params_max= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.570162235006001} logZ_max= 2.5387841487803313 obs_max= 8.995904318450718
+dist_min= tensor(2.5094) dist_max= tensor(0.5748)
+params_min,params_max=params_min,params_new
+evaluating model at params_new={'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701622350035604}
+params_min= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701622350027473} logZ_min= 2.5387740611764706 obs_min= 8.995905207119558
+params_new= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701622350035604} logZ_new= 2.538775404700537 obs_new= 8.995905281625559
+params_max= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.570162235004374} logZ_max= 2.538780143365974 obs_max= 8.995903541975963
+dist_min= tensor(1.3858) dist_max= tensor(1.7065)
+params_min,params_max=params_new,params_max
+evaluating model at params_new={'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701622350039672}
+params_min= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701622350035604} logZ_min= 2.538775404700537 obs_min= 8.995905281625559
+params_new= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701622350039672} logZ_new= 2.538778092926664 obs_new= 8.995904266572486
+params_max= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.570162235004374} logZ_max= 2.538780143365974 obs_max= 8.995903541975963
+dist_min= tensor(0.7464) dist_max= tensor(1.0384)
+params_min,params_max=params_new,params_max
+evaluating model at params_new={'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701622350041706}
+params_min= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701622350039672} logZ_min= 2.538778092926664 obs_min= 8.995904266572486
+params_new= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701622350041706} logZ_new= 2.538781843942109 obs_new= 8.99590299923342
+params_max= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.570162235004374} logZ_max= 2.538780143365974 obs_max= 8.995903541975963
+dist_min= tensor(0.7477) dist_max= tensor(0.6372)
+params_min,params_max=params_min,params_new
+evaluating model at params_new={'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.570162235004069}
+params_min= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701622350039672} logZ_min= 2.538778092926664 obs_min= 8.995904266572486
+params_new= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.570162235004069} logZ_new= 2.538784375447025 obs_new= 8.995903853655514
+params_max= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701622350041706} logZ_max= 2.538781843942109 obs_max= 8.99590299923342
+dist_min= tensor(1.4842) dist_max= tensor(1.0780)
+params_min,params_max=params_min,params_new
+evaluating model at params_new={'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.570162235004018}
+params_min= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701622350039672} logZ_min= 2.538778092926664 obs_min= 8.995904266572486
+params_new= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.570162235004018} logZ_new= 2.5387814498877646 obs_new= 8.995902702626516
+params_max= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.570162235004069} logZ_max= 2.538784375447025 obs_max= 8.995903853655514
+dist_min= tensor(1.0702) dist_max= tensor(1.3230)
+params_min,params_max=params_new,params_max
+evaluating model at params_new={'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701622350040436}
+params_min= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.570162235004018} logZ_min= 2.5387814498877646 obs_min= 8.995902702626516
+params_new= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701622350040436} logZ_new= 2.538781932357512 obs_new= 8.99590377993232
+params_max= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.570162235004069} logZ_max= 2.538784375447025 obs_max= 8.995903853655514
+dist_min= tensor(1.8334) dist_max= tensor(1.5644)
+params_min,params_max=params_min,params_new
+evaluating model at params_new={'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701622350040307}
+params_min= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.570162235004018} logZ_min= 2.5387814498877646 obs_min= 8.995902702626516
+params_new= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701622350040307} logZ_new= 2.538771361204485 obs_new= 8.995905567609697
+params_max= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701622350040436} logZ_max= 2.538781932357512 obs_max= 8.99590377993232
+dist_min= tensor(2.6167) dist_max= tensor(4.3953)
+params_min,params_max=params_new,params_max
+evaluating model at params_new={'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701622350040374}
+params_min= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701622350040307} logZ_min= 2.538771361204485 obs_min= 8.995905567609697
+params_new= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701622350040374} logZ_new= 2.5387648399012788 obs_new= 8.995907164041515
+params_max= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701622350040436} logZ_max= 2.538781932357512 obs_max= 8.99590377993232
+dist_min= tensor(1.8990) dist_max= tensor(6.0475)
+params_min,params_max=params_new,params_max
+evaluating model at params_new={'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701622350040405}
+params_min= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701622350040374} logZ_min= 2.5387648399012788 obs_min= 8.995907164041515
+params_new= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701622350040405} logZ_new= 2.538784258132853 obs_new= 8.995904303916356
+params_max= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701622350040436} logZ_max= 2.538781932357512 obs_max= 8.99590377993232
+dist_min= tensor(4.6760) dist_max= tensor(1.9213)
+params_min,params_max=params_min,params_new
+evaluating model at params_new={'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.570162235004039}
+params_min= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701622350040374} logZ_min= 2.5387648399012788 obs_min= 8.995907164041515
+params_new= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.570162235004039} logZ_new= 2.538784255196576 obs_new= 8.995903401265707
+params_max= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701622350040405} logZ_max= 2.538784258132853 obs_max= 8.995904303916356
+dist_min= tensor(4.4814) dist_max= tensor(1.3844)
+params_min,params_max=params_min,params_new
+evaluating model at params_new={'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701622350040383}
+params_min= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701622350040374} logZ_min= 2.5387648399012788 obs_min= 8.995907164041515
+params_new= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701622350040383} logZ_new= 2.5387827330609416 obs_new= 8.99590408989463
+params_max= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.570162235004039} logZ_max= 2.538784255196576 obs_max= 8.995903401265707
+dist_min= tensor(5.6012) dist_max= tensor(1.9322)
+params_min,params_max=params_min,params_new
+evaluating model at params_new={'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.570162235004038}
+params_min= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701622350040374} logZ_min= 2.5387648399012788 obs_min= 8.995907164041515
+params_new= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.570162235004038} logZ_new= 2.5387764094885146 obs_new= 8.995905350757218
+params_max= {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701622350040383} logZ_max= 2.5387827330609416 obs_max= 8.99590408989463
+dist_min= tensor(4.0063) dist_max= tensor(1.8177)
+params_min,params_max=params_min,params_new
+critical params found:  {'a1': 0.0, 'a2': 0.3651483716701107, 'a3': 3.5701622350040374}
+reference params:  {'a1': 1.1547005383792515, 'a2': 1.8257418583505538, 'a3': 4.47213595499958}
+file saved to  data/AKLT3D_X10_scan_grid_critical_a3/a1_0.0000000_a2_0.3651484/Tc.json

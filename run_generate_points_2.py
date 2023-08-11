@@ -10,7 +10,7 @@ device=${1:-cuda:0}
 '''
 
 command_template='''
-python run_find_critical_temp.py --filename {folder_name}/Tc.json --log_filename {folder_name}/Tc.log --nLayers {nLayers} --max_dim {bond_dim} {HOTRG_options} --model {model_name} --observable_name magnetizationZ --params_min "{params_min}" --params_max "{params_max}" --tol {tol} --device $device
+python run_find_critical_temp.py --find_critical_method observable --filename {folder_name}/Tc.json --log_filename {folder_name}/Tc.log --nLayers {nLayers} --max_dim {bond_dim} {HOTRG_options} --model {model_name} --observable_name magnetizationZ --params_min "{params_min}" --params_max "{params_max}" --tol {tol} --device $device
 '''
 
 def generate_params_string(params:dict):
@@ -46,7 +46,7 @@ HOTRG_options='--mcf_enabled'
 input_filename='./data_output/AKLT3D_X10_scan_grid/AKLT3D_X10_scan_grid_critical_a3.csv'
 scan_param_names=['a1','a2']
 search_param_name='a3'
-tol=0
+tol=1e-4
 
 df=pd.read_csv(input_filename)
 scan_params=[{scan_param_name:row[scan_param_name] for scan_param_name in scan_param_names+['min_'+search_param_name,'max_'+search_param_name]} for idx,row in df.iterrows()]
