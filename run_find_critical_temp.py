@@ -73,6 +73,9 @@ from TNModels import Models
 
 Model=Models[options['model']]
 params_default=Model.get_default_params()
+print(options['params_min'])
+print(options['params_max'])
+print(options['params_ref'])
 params_min=params_default.copy();params_min.update(json.loads(options['params_min'].replace("'",'"')))
 params_max=params_default.copy();params_max.update(json.loads(options['params_max'].replace("'",'"')))
 params_ref=params_default.copy();params_ref.update(json.loads(options['params_ref'].replace("'",'"'))) if options['params_ref'] is not None else params_default.copy()
@@ -108,6 +111,9 @@ T_max,logZ_max,obs_max,dNorm_max=eval_model(params_max)
 print_and_log('params_max=',str(params_max),'logZ_max=',logZ_max.item(),'obs_max=',obs_max.item())
 
 print_and_log('searching for critical temperature using bisection method')
+
+data=[]
+
 while True:
     params_new={key:(params_min[key]+params_max[key])/2 for key in params_min.keys()}
     if all([params_max[key]-params_min[key]<options['tol'] for key in params_min.keys()]): break
@@ -133,6 +139,19 @@ while True:
     print_and_log('params_new=',str(params_new),'logZ_new=',logZ_new.item(),'obs_new=',obs_new.item())
     print_and_log('params_max=',str(params_max),'logZ_max=',logZ_max.item(),'obs_max=',obs_max.item())
     print_and_log('dist_min=',dist_min,'dist_max=',dist_max)
+
+    row={
+        "params_min":params_min,"params_max":params_max,"params_new":params_new,
+        "logZ_min":logZ_min.item(),"logZ_max":logZ_max.item(),"logZ_new":logZ_new.item(),
+        "obs_min":obs_min.item(),"obs_max":obs_max.item(),"obs_new":obs_new.item(),
+        "dist_min":dist_min.item(),"dist_max":dist_max.item(),
+        "dNorm_min":dNorm_min.detach().cpu().numpy().tolist(),"dNorm_max":dNorm_max.detach().cpu().numpy().tolist(),"dNorm_new":dNorm_new.detach().cpu().numpy().tolist(),
+
+    }
+    data.append(row)
+    with open(options['filename'],'w') as f:
+        json.dump(data,f)
+
     if dist_min<dist_max:
         print_and_log('params_min,params_max=params_new,params_max')
         params_min,params_max=params_new,params_max
@@ -153,14 +172,6 @@ print_and_log('critical params found: ',params_new)
 print_and_log('reference params: ',params_ref)
 
 
-
-filename=options['filename']
-
-os.makedirs(os.path.dirname(filename), exist_ok=True)
-with open(filename,'w') as f:
-    json.dump({"params":params_new,"params_max":params_max,"params_min":params_min},f)
-
-print_and_log('file saved to ',filename)
 logfile.close()
 
     

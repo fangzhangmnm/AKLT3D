@@ -32,6 +32,7 @@ df=df_all[df_all['iLayer']==60]
 
 thresholds=(1e-2,1e-1)
 rows=[]
+scan_min_a3,scan_max_a3=df['a3'].min(),df['a3'].max()
 for a1 in sorted(set(df['a1'])):
     for a2 in sorted(set(df['a2'])):
         df1=df[np.isclose(df['a1'],a1)];df1=df1[np.isclose(df1['a2'],a2)]
@@ -42,32 +43,30 @@ for a1 in sorted(set(df['a1'])):
         df2=df1[df1['magnetizationZ']>thresholds[1]]
         max_a3=df2['a3'].min() if len(df2)>0 else np.nan
         max_obs=df2['magnetizationZ'].min() if len(df2)>0 else np.nan
+        if np.isnan(min_a3) or np.isnan(max_a3):
+            min_a3,max_a3=scan_min_a3,scan_max_a3
         rows.append({'a1':a1,'a2':a2,'max_a3':max_a3,'min_a3':min_a3,'max_obs':max_obs,'min_obs':min_obs,'dist':np.abs(max_a3-min_a3)})
 dfc=pd.DataFrame(rows)
 dfc.to_csv(f'./data_output/{task_name}/{task_name}_critical_a3.csv',index=False)
 
-def surface_plot(df,param_names,obs_name,filename=None):
-    df=df.sort_values(param_names)
-    x=df[param_names[0]].unique()
-    y=df[param_names[1]].unique()
-    z=df[obs_name].values.reshape(len(x),len(y))
-    fig=plt.figure(figsize=(8,6))
-    ax = fig.add_subplot(111, projection='3d')
-    ax.plot_surface(x,y,z,cmap='viridis')
-    ax.set_xlabel(param_names[0]);ax.set_ylabel(param_names[1]);ax.set_zlabel(obs_name)
-    plt.show()
-    if filename:
-        fig.savefig(filename,bbox_inches='tight');print(f'saved to {filename}')
-def scatter_plot(df,param_names,obs_name,filename=None):
-    fig=plt.figure(figsize=(8,6))
-    ax = fig.add_subplot(111, projection='3d')
-    p=ax.scatter(df[param_names[0]],df[param_names[1]],df[obs_name],c=df[obs_name],cmap='viridis',s=50)
-    ax.set_xlabel(param_names[0]);ax.set_ylabel(param_names[1]);ax.set_zlabel(obs_name)
-    fig.colorbar(p)
+def image_plot_2D(df,obs_name='a3',clim=None,filename=None):
+    fig=plt.figure(figsize=(5,4))
+    plt.axhline(critical_params['a2'],c='lightgrey')
+    plt.axvline(critical_params['a1'],c='lightgrey')
+    df=df.sort_values(by=['a1','a2'])
+    a1s=np.unique(df['a1'])
+    a2s=np.unique(df['a2'])
+    obs=df[obs_name].values.reshape(len(a2s),len(a1s)).T
+    def get_image_extent(xs,ys):
+        return [xs[0]-(xs[1]-xs[0])/2,xs[-1]+(xs[1]-xs[0])/2,ys[0]-(ys[1]-ys[0])/2,ys[-1]+(ys[1]-ys[0])/2]
+    plt.imshow(obs,origin='lower',extent=get_image_extent(a1s,a2s),aspect='auto',cmap='viridis',vmin=clim and clim[0],vmax=clim and clim[1])
+    # plt.scatter(df['a1'],df['a2'],c=df[obs_name],s=50,vmin=clim and clim[0],vmax=clim and clim[1])
+    plt.xlabel('a1');plt.ylabel('a2');plt.title(obs_name)
+    plt.colorbar()
     plt.tight_layout()
     plt.show()
     if filename:
         fig.savefig(filename,bbox_inches='tight');print(f'saved to {filename}')
 
-scatter_plot(dfc,['a1','a2'],'max_a3',filename=f'./data_output/{task_name}/{task_name}_critical_a3_max.png')
-scatter_plot(dfc,['a1','a2'],'min_a3',filename=f'./data_output/{task_name}/{task_name}_critical_a3_min.png')
+image_plot_2D(dfc,'max_a3',filename=f'./data_output/{task_name}/{task_name}_critical_a3_max.png')
+image_plot_2D(dfc,'min_a3',filename=f'./data_output/{task_name}/{task_name}_critical_a3_min.png')
