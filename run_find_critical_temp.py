@@ -27,21 +27,20 @@ parser.add_argument('--mcf_max_iter', type=int, default=200)
 parser.add_argument('--hotrg_sanity_check', action='store_true')
 parser.add_argument('--version', type=int, default=1)
 parser.add_argument('--device', type=str, default='cuda:0')
-parser.add_argument('--override', action='store_true')
+parser.add_argument('--overwrite', action='store_true')
 
 args = parser.parse_args()
 options=vars(args)
 
 
-
-args = parser.parse_args()
-options=vars(args)
 
 import os
-if not options['override'] and os.path.exists(options['filename']):
+if not options['overwrite'] and os.path.exists(options['filename']):
     print('file already exists, exiting')
     exit()
 os.makedirs(os.path.dirname(options['filename']),exist_ok=True)
+if options['log_filename'] is not None:
+    os.makedirs(os.path.dirname(options['log_filename']),exist_ok=True)
 logfile=open(options['log_filename'],'w') if options['log_filename'] is not None else None
 print('logging to',options['log_filename'])
 
