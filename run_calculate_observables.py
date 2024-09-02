@@ -10,6 +10,7 @@ parser.add_argument('--output_filename', type=str, required=True)
 
 parser.add_argument('--observables', type=str, nargs='+', required=True)
 parser.add_argument('--calc_binder', action='store_true')
+parser.add_argument('--double_layer', action='store_true')
 
 parser.add_argument('--device', type=str, default='cuda:0')
 parser.add_argument('--override', action='store_true')
@@ -63,7 +64,7 @@ for observable_name in options['observables']:
         T_op=T_op_momentss[iLayer][1]
 
         logZ=(logTotal+trace_tensor(T).abs().log())/2**iLayer
-        moment1=(trace_two_tensors(T_op)/trace_two_tensors(T)).abs().sqrt()
+        moment1=(trace_tensor(T_op)/trace_tensor(T))
 
         key=(iLayer,tuple(params.values()))
 
@@ -84,6 +85,11 @@ for observable_name in options['observables']:
             data[key].update({
                 observable_name+'_2':moment2.item(),
                 observable_name+'_4':moment4.item(),
+            })
+        if options['double_layer']:
+            obs_double=(trace_two_tensors(T_op,T_op)/trace_two_tensors(T,T)).abs().sqrt()
+            data[key].update({
+                observable_name+'_double':obs_double.item(),
             })
 
 
